@@ -1,0 +1,18 @@
+doctype htmlrs
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='/styles.css')
+    title Sample Pug App
+  body
+    div.container
+      if(!isLogged)
+        h1 Hello Stranger!
+      else 
+        h2 Hello Logged User (#{credentials.login})!
+      p If you want to see a secret page, you have to log in.
+      if(!isLogged) 
+        a.link(href='/auth/google') Login page &rarr;
+      else
+        a.link(href='/logout') Log out &rarr;
+      a.link(href='/secret') Secret page &rarr;
